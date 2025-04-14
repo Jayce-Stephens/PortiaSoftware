@@ -17,7 +17,7 @@ body {
     left: 0;
     z-index: 1000;
     transition: all 0.3s ease;
-    background: linear-gradient(to right, #A67A44, #F2CA99);
+    background: linear-gradient(to right, #4444a6, #99acf2);
     background-size: 200% 200%;
 
 }
@@ -76,7 +76,7 @@ body {
     background: #fff;
     order: 1;
     display: none;
-    border-bottom: #402C14 2px solid;
+    border-bottom: #141d40 2px solid;
 }
 
 .mytabs .tab h2 {
@@ -88,16 +88,16 @@ body {
 }
 
 .mytabs input[type="radio"]:checked+label {
-    background-color: #F2CA99;
-    color: #735026;
+    background-color: #999ff2;
+    color: #262a73;
     opacity: 0.8;
-    border-bottom: #402C14 2px solid;
+    border-bottom: #141440 2px solid;
 }
 
 .mytabs button {
-    background-color: #F2CA99;
-    color: #735026;
-    border: 1px solid #735026;
+    background-color: #999ff2;
+    color: #262a73;
+    border: 1px solid #141440;
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
@@ -107,7 +107,7 @@ body {
 }
 
 .mytabs button:hover {
-    background-color: #402C14;
+    background-color: #141440;
     color: #fff;
     transition: all 0.3s ease;
     opacity: 0.5;
@@ -131,3 +131,30 @@ body {
     text-align: center;
     padding-top: 50px;
 }
+
+.sp-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    max-width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    
+}
+
+.sp-boxes .box {
+    width: fill;
+    height: 80px;
+    border-radius: 20px;
+    background: #c4cecb8b;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #fff;
+}
+

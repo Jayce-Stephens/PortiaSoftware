@@ -1,4 +1,4 @@
-fetch('/Volumes/HUNTER/PortiaSoftware/frontend/anomalous_IPs.txt')
+fetch('anomalous_IPs.txt')
     .then(response => response.text())
     .then(data => {
         document.getElementById('banned-text').textContent = data;

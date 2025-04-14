@@ -1,4 +1,4 @@
-fetch('anomalous_IPs.txt')
+fetch('anomalous_ip.txt')
     .then(response => response.text())
     .then(data => {
         document.getElementById('banned-text').textContent = data;

@@ -1,0 +1,133 @@
+body {
+    background: #f5f4f4;
+    font-family: 'Roboto', sans-serif;
+    min-width: 600px;
+
+}
+
+/*     Header */
+.header {
+    width: 100%;
+    height: 80px;
+    display: block;
+    background-color: #422bab;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background: linear-gradient(to right, #A67A44, #F2CA99);
+    background-size: 200% 200%;
+
+}
+
+.inner-header {
+    width: 1000px;
+    height: 100%;
+
+
+}
+
+.logo-container {
+    height: 100%;
+    display: table;
+    float: left;
+}
+
+.logo-container h1 {
+    color: #ffff;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Monteserrat';
+    font-size: 32px;
+    font-weight: 200;
+}
+
+.logo-container h1 span {
+    font-weight: 800;
+    color: #ffff;
+}
+
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 50px auto;
+    padding: 25px;
+}
+
+.mytabs input[type="radio"] {
+    display: none;
+}
+
+.mytabs label {
+    padding: 25px;
+    background: #fdfdfd;
+    font-weight: lighter;
+
+
+}
+
+.mytabs .tab {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    order: 1;
+    display: none;
+    border-bottom: #402C14 2px solid;
+}
+
+.mytabs .tab h2 {
+    font-size: 3em;
+}
+
+.mytabs input[type="radio"]:checked+label+.tab {
+    display: block;
+}
+
+.mytabs input[type="radio"]:checked+label {
+    background-color: #F2CA99;
+    color: #735026;
+    opacity: 0.8;
+    border-bottom: #402C14 2px solid;
+}
+
+.mytabs button {
+    background-color: #F2CA99;
+    color: #735026;
+    border: 1px solid #735026;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+
+
+}
+
+.mytabs button:hover {
+    background-color: #402C14;
+    color: #fff;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.network-status {
+    width: 100%;
+    height: 300px;
+    display: block;
+    background-color: #bad1d8;
+    opacity: 0.8;
+}
+
+.network-status h1 {
+    color: #402C14;
+    height: 100%;
+    vertical-align: middle;
+    font-family: 'Monteserrat';
+    font-size: 42px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 50px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="tab-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Tab test</title>
+</head>
+<body>
+    <div class="header">
+        <div class="inner-header">
+            <div class="logo-container">
+                <h1>Portia<span>Software</span></h1>
+            </div>
+        </div>
+    </div>
+    <div class="mytabs">
+        <input type="radio" id="network-display" name="mytabs" checked="checked">
+        <label for="network-display">Network</label>
+        <div class="tab">
+            <h2>Network</h1>
+            <p>The Portia Software is a network monitoring tool, that using machine learning to detect, analyze, and prevent DDoS attacks on a network.</p>
+            <div class="network-status">
+                <h1>Begin Scanning...</h1>
+            </div>
+            <button class="button" id="scan-button">Scan Network</button>
+        </div>
+
+        <input type="radio" id="banned-ips" name="mytabs">
+        <label for="banned-ips">Banned</label>
+        <div class="tab">
+            <h2>Banned IPs</h1>
+            <pre id="banned-text">Loading...</pre>
+            <script src="readtext.js"></script>
+
+        </div>
+
+        <input type="radio" id="saved-packets" name="mytabs">
+        <label for="saved-packets">Saved Packets</label>
+        <div class="tab">
+            <h2>Saved Packets</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

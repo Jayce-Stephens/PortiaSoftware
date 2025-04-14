@@ -57,9 +57,12 @@ def main(test_data_path):
     # Store the Ipv6.src from anomalous  packets
     anomalous_ip = anomalous_packets['ip_decoded']
 
+    ip_set = set()
     with open('anomalous_ip.txt', 'w') as f:
         for item in anomalous_ip:
+            ip_set.add(item)
+        for item in ip_set:
             f.write("%s\n" % item)
 
     print("Done writing anomalous IPs to file")
-main()
+main("TFTP.csv")

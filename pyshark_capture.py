@@ -1,11 +1,14 @@
 import pyshark
 import json
 from pathlib import Path
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
 
 def genesis():
     interface = 'en0'
     pcap_file = 'capture011.pcap'
-
     packetsData = []
 
 
@@ -16,5 +19,18 @@ def genesis():
     #capture.dump_to_pcap(pcap_file)
     capture.close()
     print("Capture finished. Packets saved to", pcap_file)
+    return ("Capture complete!")
 
+@app.route('/capture', methods=['POST'])
+def start_packets():
+    try:
+        # Start packet capture
+        result = genesis()
+        return jsonify({'message': result})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
 

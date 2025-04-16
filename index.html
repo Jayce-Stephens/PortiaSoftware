@@ -23,9 +23,15 @@
         <label for="network-display">Network</label>
         <div class="tab">
             <h2>Network</h2>
-            <p>The Portia Software is a network monitoring tool, that using machine learning to detect, analyze, and prevent DDoS attacks on a network.</p>
-            <div class="network-status">
-                <h1>Begin Scanning...</h1>
+            <div class="project-desc">
+                <div id="summary">
+                    <h1>Purpose</h1>
+                    <p>The Portia Software functions as a network monitoring tool that uses machine learning to detect, analyze, and prevent DDoS attacks on a network. The tool is be able to capture packets from the network, analyze them, and provide insights into the network traffic.</p>
+                </div>
+                <div id="ml-desc">
+                    <h1>Machine Learning</h1>
+                    <p>The Portia Software uses an isolation forest machine learning algorithm to analyze network traffic and detect anomalies that may indicate a DDoS attack. The tool is trained on a dataset of normal and malicious network traffic, allowing it to identify patterns and behaviors associated with DDoS attacks.</p>
+                </div>
             </div>
             <button onclick="startCapture()">Scan Network</button>
             <p id="status"></p>

@@ -24,7 +24,7 @@ body {
 
 .inner-header {
     width: 1000px;
-    height: 100%; 
+    height: 100%;
 
 }
 
@@ -49,17 +49,17 @@ body {
     color: #ffff;
 }
 
-#developer-btn{
+#developer-btn {
     background-color: #999ff2;
     color: #262a73;
     border: 1px solid #141440;
     padding: 5px 20px;
-    font-size:small;
+    font-size: small;
     cursor: pointer;
     border-radius: 5px;
     float: right;
     margin-top: 20px;
-    position:absolute;
+    position: absolute;
     right: 20px;
 }
 
@@ -131,23 +131,49 @@ body {
     opacity: 0.5;
 }
 
-.network-status {
+.project-desc {
     width: 100%;
     height: 300px;
-    display: block;
-    background-color: #bad1d8;
+    display: flex;
+    flex-direction: row;
     opacity: 0.8;
 }
 
-.network-status h1 {
-    color: #402C14;
-    height: 100%;
-    vertical-align: middle;
+.project-desc h1 {
+    color: #1e1e1e;
+    height: 30px;
+    width: auto;
+    vertical-align: left;
     font-family: 'Monteserrat';
-    font-size: 42px;
+    font-size: 30px;
     font-weight: 100;
-    text-align: center;
+    text-align: left;
     padding-top: 50px;
+    border-bottom: #5334db 2px solid;
+}
+
+#summary {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f0fb;
+    border: #5334db 2px solid;
+    opacity: 0.8;
+    border-radius: 16px;
+
+}
+
+#ml-desc {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f0fb;
+    border: #5334db 2px solid;
+    opacity: 0.8;
+    border-radius: 16px;
+
 }
 
 .sp-boxes {

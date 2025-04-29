@@ -16,12 +16,22 @@ def genesis():
     print("Starting capture...")
     capture = pyshark.LiveCapture(interface=interface, output_file=pcap_file)
     capture.sniff(packet_count=10000)
-    #capture.dump_to_pcap(pcap_file)
     capture.close()
     print("Capture finished. Packets saved to", pcap_file)
     return ("Capture complete!")
+genesis()
 
-@app.route('/capture', methods=['POST'])
+
+
+
+
+
+
+
+
+
+
+""" @app.route('/capture', methods=['POST'])
 def start_packets():
     try:
         # Start packet capture
@@ -32,5 +42,5 @@ def start_packets():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) """
 

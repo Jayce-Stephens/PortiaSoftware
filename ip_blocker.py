@@ -41,4 +41,4 @@ def blockip(ip_set_id, file_path):
         print("No new IPs to add. Current total blocked IPs:", len(current_addresses))
 
 
-blockip('dc84b8dc-96a0-4cf3-8a43-908a9361f6d6', '/Volumes/HUNTER/PortiaSoftware/anomalous_ip.txt')
+blockip('###', '/Volumes/HUNTER/PortiaSoftware/anomalous_ip.txt')

@@ -33,24 +33,25 @@
                     <p>The Portia Software uses an isolation forest machine learning algorithm to analyze network traffic and detect anomalies that may indicate a DDoS attack. The tool is trained on a dataset of normal and malicious network traffic, allowing it to identify patterns and behaviors associated with DDoS attacks.</p>
                 </div>
             </div>
-            <button onclick="startCapture()">Scan Network</button>
+            <button onclick="start_capture()">Scan Network</button>
             <p id="status"></p>
             <script>
-                function startCapture() {
-                  fetch('/start-capture', {
+                function start_capture() {
+                  fetch('http://127.0.0.1:5000/start-capture', {
                     method: 'POST',
                   })
                   .then(response => {
                     if (!response.ok) {
-                      throw new Error('Network response was not ok');
+                      throw new Error(`HTTP error! status: ${response.status}`);
                     }
                     return response.json();
                   })
                   .then(data => {
                     document.getElementById('status').innerText = data.message;
+                    console.log('Output:', data.output);
                   })
                   .catch(error => {
-                    document.getElementById('status').innerText = 'Error: ' + error;
+                    document.getElementById('status').innerText = 'Error: ' + error.message;
                   });
                 }
             </script>
@@ -89,6 +90,5 @@
 
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

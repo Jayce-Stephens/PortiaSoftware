@@ -18,7 +18,6 @@ def train_isofrst():
     combinded_df = pd.concat([df1, df2], ignore_index=True)
    
     # Data preprocessing
-    #df = data_preprocessing(df)
     combinded_df.info()
     print(combinded_df.columns)
     print("##############\n")
@@ -28,12 +27,13 @@ def train_isofrst():
     encoder_dest = OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1)
     
     combinded_df['ipv6_encoded'] = encoder_src.fit_transform(combinded_df[['Source IP']])
-    combinded_df['destip_encoded'] = encoder_dest.fit_transform(combinded_df[['Destination IP']])
-    #df['ipv6_encoded'] = encoder.fit_transform(df['Src IP'].astype(str))
+    #combinded_df['ipv6_encoded'] = encoder_src.fit_transform(combinded_df[['ipv6.src']]) #for mac
 
+    combinded_df['destip_encoded'] = encoder_dest.fit_transform(combinded_df[['Destination IP']])
+    #combinded_df['destip_encoded'] = encoder_dest.fit_transform(combinded_df[['ipv6.dst']]) #for mac
 
     anomoly_inputs = ['ipv6_encoded','Total Fwd Packets','Source Port','Destination Port', 'destip_encoded']
-    #anomoly_inputs = ['ipv6_encoded','Total Fwd Packet','Src Port','Dst Port']
+  
 
     # Train the model
     model_IF = IsolationForest(n_estimators=100, max_samples=0.1, contamination=0.1, random_state=42)
@@ -68,12 +68,6 @@ def train_isofrst():
     print("Anomalous packets:")
     print(anomalous_packets)
 
-    # Store the Ipv6.src from anomalous  packets
-    anomalous_ip = anomalous_packets['ipv6_decoded']
-
-    #with open('anomalous_ip.txt', 'w') as f:
-   #     for item in anomalous_ip:
-     #       f.write("%s\n" % item)
 
     # Visualize the anomalous packets
     sizes = [dict(combinded_df['anomoly'].value_counts())[-1], dict(combinded_df['anomoly'].value_counts())[1]]

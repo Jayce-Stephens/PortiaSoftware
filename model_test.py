@@ -14,13 +14,12 @@ def load_model(model_path):
     return model
 
 
-def main(test_data_path):
+def main(test_data_path=None):
     # Check if the test data path is provided
-    if len(sys.argv) != 2:
-        print("No test data path provided")
-        test_data_path = 'TFTP.csv'
-    else:
-        test_data_path = sys.argv[1]
+    if not test_data_path:
+        print("No test data path provided, using default path.")
+        test_data_path = '/Volumes/HUNTER/PortiaSoftware/database/TFTP.csv'
+
     # Load the model
     model_path = '/Volumes/HUNTER/PortiaSoftware/trained_model/isofrst_model.sav'
     model = load_model(model_path)
@@ -32,7 +31,7 @@ def main(test_data_path):
         encoder_dest = pickle.load(file)
 
 
-    test_df = pd.read_csv('/Volumes/HUNTER/PortiaSoftware/database/' + test_data_path, encoding='latin1')
+    test_df = pd.read_csv(test_data_path, encoding='latin1')
 
     test_df.info()
     test_df.columns = test_df.columns.str.strip()
@@ -40,9 +39,12 @@ def main(test_data_path):
 
     # Data preprocessing
     test_df['ipv6_encoded'] = encoder_src.transform(test_df[['Source IP']]) #Use just transform so that the encoder is not refitted
+   
     test_df['destip_encoded'] = encoder_dest.transform(test_df[['Destination IP']])
+    
 
     test_inputs = ['ipv6_encoded', 'Total Fwd Packets', 'Source Port', 'Destination Port', 'destip_encoded']
+    
 
     # Test the model
     test_df['anomoly_score'] = model.decision_function(test_df[test_inputs])
@@ -76,4 +78,4 @@ def main(test_data_path):
     plt.show()
 
     print("Done writing anomalous IPs to file")
-main("TFTP.csv")
+main()

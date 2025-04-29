@@ -21,26 +21,3 @@ def genesis():
     return ("Capture complete!")
 genesis()
 
-
-
-
-
-
-
-
-
-
-
-""" @app.route('/capture', methods=['POST'])
-def start_packets():
-    try:
-        # Start packet capture
-        result = genesis()
-        return jsonify({'message': result})
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
-
-if __name__ == '__main__':
-    app.run(debug=True) """
-

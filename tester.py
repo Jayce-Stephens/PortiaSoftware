@@ -25,5 +25,5 @@ print("Running model_test.main()...")
 model_test.main("/Volumes/HUNTER/PortiaSoftware/database/TFTP.csv")
 
 print("Running ip_blocker.blockip()...")
-ip_blocker.blockip('dc84b8dc-96a0-4cf3-8a43-908a9361f6d6', '/Volumes/HUNTER/PortiaSoftware/anomalous_ip.txt')
+ip_blocker.blockip('#####', '/Volumes/HUNTER/PortiaSoftware/anomalous_ip.txt')
 
